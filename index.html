@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Advertisment</title>
+<meta charset="UTF-8">
+  <meta name="description" content="Free Education Videos, Audios, Text reference">
+  <meta name="keywords" content="Political Science">
+  <meta name="author" content="Hemal Rajput">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+function uri_decode() {
+	document.getElementById("check").innerHTML = "You will be redirected in";
+	var enc_uri = (location.search).slice(1);
+	var counter = Number(enc_uri.substring(0, enc_uri.indexOf("?")));
+	var res = decodeURIComponent(enc_uri.slice((enc_uri.indexOf("?"))+1));
+	if(counter<20)
+		counter = 60;
+	else
+		counter -= 16;
+	document.getElementById("counter").innerHTML = counter + " seconds";
+    	setInterval(function (){
+		counter--;
+		document.getElementById("counter").innerHTML = counter + " seconds";
+		if(counter == 0)
+		location.assign(res);
+		if(counter < 0)
+		location.assign("https://www.zotero.org/hemalacademy/items");
+		}, 1000);
+}
+</script>
+</head>
+<body onload="uri_decode()">
+<h3 id="check" style="text-align: center;">Javascript is not Enabled.Please Enable Javascript</h3>
+<h3 id="counter" style="text-align: center;"></h3> 
+</body>
+</html>
