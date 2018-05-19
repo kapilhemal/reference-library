@@ -22,9 +22,9 @@ function uri_decode() {
 		counter--;
 		document.getElementById("counter").innerHTML = counter + " seconds";
 		if(counter == 0)
-		location.assign(res);
+		location.replace(res);
 		if(counter < 0)
-		location.assign("https://www.zotero.org/hemalacademy/items");
+		location.replace("https://www.zotero.org/hemalacademy/items");
 		}, 1000);
 }
 </script>
